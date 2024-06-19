@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { ContextGlobal, ContextProvider } from './Components/Context/global.context';
+import { ContextProvider } from './Components/Context/global.context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

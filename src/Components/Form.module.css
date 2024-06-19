@@ -1,0 +1,25 @@
+.form {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    background-color:slategray;
+    width: 500px;
+    padding:20px;
+    margin-bottom: 20px;
+    border-radius: 5px; 
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.formBtn{
+    margin-top: 15px;
+}
+
+label {
+    margin-top: 5px;
+    font-weight: 800;
+}
+
+input {
+    line-height: 30px;
+}
