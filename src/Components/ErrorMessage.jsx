@@ -2,7 +2,7 @@ import styles from './ErrorMessage.module.css'
 const ErrorMessage = () => {
     return (
         <div>
-            <h3 className={styles.errorMsg}>Porfavor, llena los campos solicitados.</h3>
+            <h3 className={styles.errorMsg}>Por favor verifique su información nuevamente</h3>
         </div>
     )
 }

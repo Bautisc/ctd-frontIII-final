@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Card from '../Components/Card'
 import { useContextGlobal } from '../Components/Context/global.context';
 import { useParams } from 'react-router-dom';
 
@@ -8,9 +7,10 @@ import { useParams } from 'react-router-dom';
 
 const Detail = () => {
 
-    const {id} = useParams();
-    const {dentistDetails, fetchDentistDetails} = useContextGlobal();
+    const {state, fetchDentistDetails} = useContextGlobal();
+    const {dentistDetails} = state;
 
+    const {id} = useParams();
     console.log('ID from useParams:', id);
  
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
@@ -22,19 +22,20 @@ const Detail = () => {
   return (
     <>
             {dentistDetails ? (
-                <>
-                    <h1>Detail Dentist id: {dentistDetails.id}</h1>
+                <div className='dentistDetails'>
+                    {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
+                    {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+                    <h1>Detail Dentist Nro: {dentistDetails.id}</h1>
+                    <img src="../images/doctor.jpg" alt=""/>
                     <p>Name: {dentistDetails.name}</p>
                     <p>Username: {dentistDetails.username}</p>
                     <p>Email: {dentistDetails.email}</p>
                     <p>Phone: {dentistDetails.phone}</p>
                     <p>Website: {dentistDetails.website}</p>
-                </>
+                </div>
             ) : (
                     <p>Loading...</p>
                 )}
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
     </>
   )
 }

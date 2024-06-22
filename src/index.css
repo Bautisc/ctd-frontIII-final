@@ -1,96 +1,187 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --background-color: #eeeedd;
+    --btn-color:#6D8ABE;
+    --secondary-background-color:#333333;
+    --card-bg: #e5e5cc;
+    --primary-text-color: #1E1E1C;
+    --border-color: #333333;
+    --secondary-text-color: #ffffff;
+    --card-text-color:#1E1E1C ;
+    --card-hover: #7C9ED9;
+}
+
+[data-theme="dark"] {
+    --background-color: #2A2A2A;
+    --secondary-background-color:#eeeedd;
+    --btn-color: #1F2836;
+    --card-bg: #3C3C3C;
+    --primary-text-color: #eeeedd;
+    --border-color: #333333;
+    --secondary-text-color: #2A2A2A;
+    --card-text-color: ;
+    --card-hover: #CED98E;
+}
+.App{
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+html, body {
+    margin: 0;
+    height:100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 .favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--btn-color);
+    color: var(--primary-text-color);
+
+}
+.changeTheme {
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: none;
 }
 
 h1{
-  text-align: center;
+    text-align: center;
 }
 
 nav{
-  display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:var(--secondary-background-color);
+    color: var(--secondary-text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+nav a {
+    padding: 0 40px;
 }
 
 a{
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
-  cursor: pointer;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    margin: 5px;
+    cursor: pointer;
 }
 a:hover{
-  color: rgb(136, 136, 136);
+    color: rgb(136, 136, 136);
 } 
+a h3 {
+    margin: 0;
+    font-size: 1rem;
+    padding-top: 10px;
+}
 
 footer {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 90%;
+    height: 40px;
+    margin-top: 2rem;
 }
 footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
+    margin: 0;
+    padding-top: 0.7rem;
+    padding-right: 0.2rem;
 }
 
 form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
 }
 
-.card{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+.form button {
+    align-self: center;
+    width: 100px;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 1em;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+}
+
+.card, .card a{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-color: var(--card-bg);
+    color: var(--card-text-color);
+}
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.dentistDetails {
+    width: 400px;
+    margin-top: 4rem;
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dentistDetails img {
+    width: 200px;
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+    border: 0.9px solid var(--card-hover);
 }
 
 .card-grid{
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    width: 90vw;
+    height: auto;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.card img {
+    height: 120px;
 }
 
 table {
- border-collapse: collapse;
+    border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     display: table;
@@ -99,19 +190,12 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+    background-color: #dddddd;
 }
 
-.dark{
-  background-color: #12121296;
-  color: white;
-}
-.dark > a {
-  color: white;
-}
